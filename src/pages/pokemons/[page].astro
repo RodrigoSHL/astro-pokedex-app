@@ -6,7 +6,7 @@ import PokemonCard from "@components/PokemonCard.astro";
 // Código Server Side Only - Momento de construcción BUILD TIME
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const resp = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151");
+  const resp = await fetch("https://pokeapi.co/api/v2/pokemon?limit=1000");
   const { results } = (await resp.json()) as AllPokemonResponse;
 
   return paginate(results, { pageSize: 20 });
