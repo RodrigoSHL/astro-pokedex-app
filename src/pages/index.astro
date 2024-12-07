@@ -1,8 +1,7 @@
 ---
-import PokemonCard from "../components/PokemonCard.astro";
-import Welcome from "../components/Welcome.astro";
-import type { AllPokemonResponse } from "../interfaces/pokemon-response.interface";
+import PokemonCard from "@components/PokemonCard.astro";
 import Layout from "../layouts/Layout.astro";
+import type { AllPokemonResponse } from "@interfaces/pokemon-response.interface";
 
 const title: string = "Poke list Page";
 const resp = await fetch("https://pokeapi.co/api/v2/pokemon/");
