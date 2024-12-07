@@ -3,6 +3,7 @@ import type { GetStaticPaths } from "astro";
 import type { AllPokemonResponse } from "@interfaces/pokemon-response.interface";
 import Layout from "../../layouts/Layout.astro";
 import PokemonCard from "@components/PokemonCard.astro";
+import Title from "@components/shared/Title.astro";
 // Código Server Side Only - Momento de construcción BUILD TIME
 
 export const getStaticPaths = (async ({ paginate }) => {
@@ -18,9 +19,7 @@ console.log("🚀 ~ page:", page);
 ---
 
 <Layout title={title} description={""} image={""}>
-  <h1 class="text-3xl">Listado de Pokémons</h1>
-  <hr />
-
+  <Title>Pokemon List Paginated</Title>
   <section
     aria-label="Listado de Pokémons"
     class="grid grid-cols-1 sm:grid-cols-4 md:grid-cols-5 gap-4 mt-5"

@@ -2,6 +2,7 @@
 import PokemonCard from "@components/PokemonCard.astro";
 import Layout from "../layouts/Layout.astro";
 import type { AllPokemonResponse } from "@interfaces/pokemon-response.interface";
+import Title from "@components/shared/Title.astro";
 
 const title: string = "Poke list Page";
 const resp = await fetch("https://pokeapi.co/api/v2/pokemon/");
@@ -10,9 +11,8 @@ console.log("data", data);
 ---
 
 <Layout title={title} description={""} image={""}>
-  <h1 class="text-3xl">Listado de Pokémons</h1>
-  <hr />
-
+  <Title>Pokemon List</Title>
+  
   <section
     aria-label="Listado de Pokémons"
     class="grid grid-cols-1 sm:grid-cols-4 md:grid-cols-5 gap-4 mt-5"

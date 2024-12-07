@@ -1,6 +1,7 @@
 ---
+import Navbar from '@components/shared/Navbar.astro';
 import { ViewTransitions } from 'astro:transitions';
-import { siteInfo } from '../const/siteInfo';
+import { siteInfo } from 'src/const/siteInfo';
 
 interface Props {
   title?: string;
@@ -24,7 +25,7 @@ const {
 
     <!-- SEO -->
     <meta name="description" content={description} />
-    <meta name="author" content={'Rodrigo Cat'} />
+    <meta name="author" content={'Fernando Herrera'} />
 
     <!-- OG Metatags -->
     <meta property="og:title" content={title} />
@@ -41,8 +42,9 @@ const {
       } -->
   </head>
 
-  <body class="bg-slate-800 text-slate-100 m-auto max-w-3xl">
-    <main class="mt-10">
+  <body class="bg-slate-800 text-slate-100 flex flex-col min-h-screen">
+    <Navbar />
+    <main class="mt-10 mx-auto flex-grow w-full max-w-4xl px-4">
       <slot />
     </main>
   </body>
