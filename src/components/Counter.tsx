@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
 
-export const Counter = () => {
+interface Props {
+    initialValue: number
+}
 
-    const [counter, setCounter] = useState(0)
+export const Counter = (props: Props) => {
+
+    const [counter, setCounter] = useState(props.initialValue)
+
     return (
         <>
             <h1>Counter</h1>

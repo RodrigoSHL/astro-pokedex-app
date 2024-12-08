@@ -2,10 +2,15 @@
 import { Counter } from "@components/Counter";
 import Title from "@components/shared/Title.astro";
 import Layout from "@layouts/Layout.astro";
+
+const initialCountValue: number = 23;
 ---
 
 <Layout>
   <Title>Islands</Title>
+  <video controls="" autoplay="" transition:persist="playing  ">
+    <source src="https://ia804502.us.archive.org/33/items/GoldenGa1939_3/GoldenGa1939_3_512kb.mp4" type="video/mp4">
+  </video>
   <div
     style={{
       height: "2000px",
@@ -14,5 +19,10 @@ import Layout from "@layouts/Layout.astro";
     }}
   >
   </div>
-  <Counter client:visible />
+  <Counter 
+    client:visible 
+    initialValue={initialCountValue}
+    transition:persist="counter"
+    transition:persist-props
+  />
 </Layout>
